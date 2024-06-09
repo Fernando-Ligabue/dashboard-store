@@ -27,7 +27,6 @@ export async function POST(req: NextRequest) {
       },
       shipping_options: [
         { shipping_rate: "shr_1PPhd7Itg3G4cSQujulrQnUF" },
-        // inserir mais opçoes de taxa de envio aqui, estes sao criados no stripe dashboard
       ],
       line_items: cartItems.map((cartItem: any) => ({
         price_data: {
@@ -40,7 +39,7 @@ export async function POST(req: NextRequest) {
               ...(cartItem.color && { color: cartItem.color }),
             },
           },
-          unit_amount: cartItem.item.price * 100,
+          unit_amount:  Math.round(cartItem.item.price * 100),
         },
         quantity: cartItem.quantity,
       })),
