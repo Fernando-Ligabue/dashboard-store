@@ -26,7 +26,7 @@ export async function POST(req: NextRequest) {
         allowed_countries: ["PT"],
       },
       shipping_options: [
-        { shipping_rate: "shr_1McnQJDnqRcqO72IAWMjALzp" },
+        { shipping_rate: "shr_1PPhd7Itg3G4cSQujulrQnUF" },
         // inserir mais opçoes de taxa de envio aqui, estes sao criados no stripe dashboard
       ],
       line_items: cartItems.map((cartItem: any) => ({
