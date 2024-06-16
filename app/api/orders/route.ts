@@ -25,7 +25,7 @@ export const GET = async (req: NextRequest) => {
     return NextResponse.json(orderDetails, { status: 200 });
   } catch (err) {
     console.log("[orders_GET]", err)
-    return new NextResponse("Internal Server Error", { status: 500 });
+    return new NextResponse("Ocorreu um erro interno de servidor, por favor tente mais tarde.", { status: 500 });
   }
 }
 

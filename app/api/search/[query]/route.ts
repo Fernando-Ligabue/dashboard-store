@@ -10,14 +10,14 @@ export const GET = async (req: NextRequest, { params }: { params: { query: strin
       $or: [
         { title: { $regex: params.query, $options: "i" } },
         { category: { $regex: params.query, $options: "i" } },
-        { tags: { $in: [new RegExp(params.query, "i")] } } // $in is used to match an array of values
+        { tags: { $in: [new RegExp(params.query, "i")] } }
       ]
     })
 
     return NextResponse.json(searchedProducts, { status: 200 })
   } catch (err) {
     console.log("[search_GET]", err)
-    return new NextResponse("Internal Server Error", { status: 500 })
+    return new NextResponse("Ocorreu um erro interno de servidor, por favor, tente mais tarde.", { status: 500 })
   }
 }
 

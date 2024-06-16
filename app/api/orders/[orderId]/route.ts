@@ -14,7 +14,7 @@ export const GET = async (req: NextRequest, { params }: { params: { orderId: Str
     })
 
     if (!orderDetails) {
-      return new NextResponse(JSON.stringify({ message: "Order Not Found" }), { status: 404 })
+      return new NextResponse(JSON.stringify({ message: "Nenhum pedido encontrado" }), { status: 404 })
     }
 
     const customer = await Customer.findOne({ clerkId: orderDetails.customerClerkId})
@@ -22,7 +22,7 @@ export const GET = async (req: NextRequest, { params }: { params: { orderId: Str
     return NextResponse.json({ orderDetails, customer }, { status: 200 })
   } catch (err) {
     console.log("[orderId_GET]", err)
-    return new NextResponse("Internal Server Error", { status: 500 })
+    return new NextResponse("Ocorreu um erro interno, por favor tente mis tarde.", { status: 500 })
   }
 }
 

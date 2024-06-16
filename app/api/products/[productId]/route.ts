@@ -158,7 +158,7 @@ export const DELETE = async (
       )
     );
 
-    return new NextResponse(JSON.stringify({ message: "Product deleted" }), {
+    return new NextResponse(JSON.stringify({ message: "Produto excluído." }), {
       status: 200,
     });
   } catch (err) {

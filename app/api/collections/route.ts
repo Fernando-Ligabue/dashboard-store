@@ -37,7 +37,7 @@ export const POST = async (req: NextRequest) => {
     return NextResponse.json(newCollection, { status: 200 })
   } catch (err) {
     console.log("[collections_POST]", err)
-    return new NextResponse("Internal Server Error", { status: 500 })
+    return new NextResponse("Ocorreu um erro interno de servidor, por favor tente mais tarde.", { status: 500 })
   }
 }
 
@@ -50,7 +50,7 @@ export const GET = async (req: NextRequest) => {
     return NextResponse.json(collections, { status: 200 })
   } catch (err) {
     console.log("[collections_GET]", err)
-    return new NextResponse("Internal Server Error", { status: 500 })
+    return new NextResponse("Ocorreu um erro interno de servidor, por favor tente mais tarde.", { status: 500 })
   }
 }
 
