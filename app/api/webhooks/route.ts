@@ -48,7 +48,7 @@ export const POST = async (req: NextRequest) => {
         }
       })
 
-      await connectToDB()
+      await connectToDB();
 
       const newOrder = new Order({
         customerClerkId: customerInfo.clerkId,
@@ -58,7 +58,7 @@ export const POST = async (req: NextRequest) => {
         totalAmount: session.amount_total ? session.amount_total / 100 : 0,
       })
 
-      await newOrder.save()
+      await newOrder.save();
 
       let customer = await Customer.findOne({ clerkId: customerInfo.clerkId })
 
@@ -74,7 +74,7 @@ export const POST = async (req: NextRequest) => {
       await customer.save()
     }
 
-    return new NextResponse("Order created", { status: 200 })
+    return new NextResponse("Pedido efetuado com sucesso!", { status: 200 })
   } catch (err) {
     console.log("[webhooks_POST]", err)
     return new NextResponse("Ocorreu um erro ao processar o seu pedido!", { status: 500 })

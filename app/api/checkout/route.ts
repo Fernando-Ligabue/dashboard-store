@@ -42,6 +42,8 @@ export async function POST(req: NextRequest) {
           unit_amount:  Math.round(cartItem.item.price * 100),
         },
         quantity: cartItem.quantity,
+        colors: cartItem.color,
+        sizes: cartItem.size,
       })),
       client_reference_id: customer.clerkId,
       success_url: `${process.env.ECOMMERCE_STORE_URL}/payment_success`,
