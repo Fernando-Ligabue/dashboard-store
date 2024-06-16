@@ -33,7 +33,7 @@ export const GET = async (
     });
   } catch (err) {
     console.log("[productId_GET]", err);
-    return new NextResponse("Internal error", { status: 500 });
+    return new NextResponse("Ocorreu um erro interno de servidor, por favor, tente mais tarde.", { status: 500 });
   }
 };
 
@@ -122,7 +122,7 @@ export const POST = async (
     return NextResponse.json(updatedProduct, { status: 200 });
   } catch (err) {
     console.log("[productId_POST]", err);
-    return new NextResponse("Internal error", { status: 500 });
+    return new NextResponse("Ocorreu um erro interno de servidor, por favor, tente mais tarde.", { status: 500 });
   }
 };
 
@@ -163,7 +163,7 @@ export const DELETE = async (
     });
   } catch (err) {
     console.log("[productId_DELETE]", err);
-    return new NextResponse("Internal error", { status: 500 });
+    return new NextResponse("Ocorreu um erro interno de servidor, por favor, tente mais tarde.", { status: 500 });
   }
 };
 
